@@ -1,0 +1,113 @@
+.ourYachts {
+  padding: 80px 0;
+  background: #11131f;
+}
+
+.ourYachtsContainer {
+  display: grid;
+  gap: 32px;
+}
+
+.sectionTitle {
+  color: #fbfbfb;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  text-align: center;
+  margin: 0;
+}
+
+.list {
+  display: grid;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card {
+  background: #fbfbfb;
+  border-radius: 24px;
+  padding: 24px;
+  display: grid;
+  gap: 16px;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.cardName {
+  margin: 0;
+  color: #0e3b44;
+  font-weight: 700;
+}
+
+.cardCategory {
+  color: #1b414b;
+  font-size: 0.95rem;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid rgba(14, 59, 68, 0.2);
+  margin: 0;
+}
+
+.detailsBlock {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  font-size: 0.95rem;
+}
+
+.detailsList,
+.detailsValues {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.detail {
+  color: #1b414b;
+  font-weight: 600;
+}
+
+.detailValue {
+  color: #0e3b44;
+}
+
+.ctaButton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 14px 32px;
+  border-radius: 15px;
+  background: #1b414b;
+  color: #fbfbfb;
+  text-decoration: none;
+  width: fit-content;
+}
+
+@media (min-width: 768px) {
+  .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,52 @@
+.aboutSection {
+  padding: 80px 0;
+  background: #11131f;
+}
+
+.aboutContainer {
+  display: grid;
+  gap: 32px;
+  align-items: center;
+}
+
+.aboutContent {
+  display: grid;
+  gap: 24px;
+}
+
+.aboutTitle {
+  color: #fbfbfb;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.aboutTextBox {
+  display: grid;
+  gap: 16px;
+}
+
+.aboutTextTitle {
+  color: #fbfbfb;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.aboutText {
+  color: rgba(251, 251, 251, 0.8);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.aboutImage {
+  width: 100%;
+  border-radius: 24px;
+  object-fit: cover;
+}
+
+@media (min-width: 1280px) {
+  .aboutContainer {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}

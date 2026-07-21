@@ -1,0 +1,81 @@
+.mobileMenu {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 20px 32px;
+  background: linear-gradient(90deg, #11131f 0%, #1b414b 100%);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 20;
+}
+
+.isOpen {
+  transform: translateX(0);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #fbfbfb;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.closeButton {
+  border: none;
+  background: transparent;
+  color: #fbfbfb;
+}
+
+.closeIcon {
+  fill: currentColor;
+}
+
+.navWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 20px;
+  text-align: center;
+}
+
+.navLink {
+  color: #fbfbfb;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.socialsWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.socials {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.socialLink {
+  color: #fbfbfb;
+  text-decoration: none;
+}
+
+.socialIcon {
+  fill: currentColor;
+}
