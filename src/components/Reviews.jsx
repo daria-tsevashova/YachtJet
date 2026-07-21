@@ -33,9 +33,9 @@ function Reviews() {
         <h2 className={styles.title}>YachtJet take pride in providing the best possible service and experience to our customers</h2>
         <p className={styles.subtitle}>Our customers have enjoyed unforgettable moments on our yachts. Don't just take our word for it – read on to find out what they have to say about their journey with us.</p>
 
-        <ul className={styles.list}>
+        <ul className={`reviews-list ${styles.list}`}>
           {reviewsCards.map((review) => (
-            <li className={`${styles.card} ${review.hiddenClass || ''}`} key={review.name}>
+            <li className={`reviews-card ${styles.card} ${review.hiddenClass || ''}`} key={review.name}>
               <img src={review.image} srcSet={`${review.image} 1x, ${review.image2x} 2x`} alt={review.alt} width="56" height="56" className={styles.avatar} />
               <h3 className={styles.name}>{review.name}</h3>
               <p className={styles.text}>{review.text}</p>

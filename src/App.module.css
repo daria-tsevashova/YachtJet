@@ -1,0 +1,99 @@
+:global(html) {
+  scroll-behavior: smooth;
+}
+
+:global(body) {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: #0e1823;
+  color: #fbfbfb;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+:global(*) {
+  box-sizing: border-box;
+}
+
+:global(main) {
+  overflow-x: hidden;
+}
+
+:global(.visually-hidden) {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  margin: -1px;
+}
+
+:global(.container) {
+  width: min(100% - 32px, 100%);
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 768px) {
+  :global(.container) {
+    max-width: 768px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  :global(.container) {
+    max-width: 1280px;
+  }
+}
+
+:global(.visually-hidden-tablet) {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  :global(.visually-hidden-tablet) {
+    display: flex;
+  }
+}
+
+:global(.visually-hidden-descktop) {
+  display: none;
+}
+
+@media (min-width: 1280px) {
+  :global(.visually-hidden-descktop) {
+    display: flex;
+  }
+}
+
+@media (min-width: 768px) {
+  :global(.reviews-list li:nth-child(2).visually-hidden) {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    clip-path: none;
+    white-space: normal;
+  }
+}
+
+@media (min-width: 1280px) {
+  :global(.reviews-card.visually-hidden) {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    clip-path: none;
+    white-space: normal;
+  }
+}
