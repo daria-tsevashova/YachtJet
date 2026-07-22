@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import styles from './Header.module.css';
 
 const socialLinks = [
@@ -7,6 +8,38 @@ const socialLinks = [
 ];
 
 function Header({ navLinks, onMenuToggle, onMenuClose, isMenuOpen }) {
+  const [activeLink, setActiveLink] = useState(navLinks[0]?.href || '');
+
+  useEffect(() => {
+    const sections = navLinks
+      .map((link) => document.querySelector(link.href))
+      .filter(Boolean);
+
+    if (!sections.length) return undefined;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntry = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visibleEntry) {
+          setActiveLink(`#${visibleEntry.target.id}`);
+        }
+      },
+      { threshold: [0.3, 0.6] }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, [navLinks]);
+
+  const handleNavClick = (linkHref) => {
+    setActiveLink(linkHref);
+    onMenuClose();
+  };
+
   return (
     <header className={styles.header}>
       <div className={`container ${styles.headerContainer}`}>
@@ -15,13 +48,21 @@ function Header({ navLinks, onMenuToggle, onMenuClose, isMenuOpen }) {
             yachtjet
           </a>
           <ul className={styles.navList}>
-            {navLinks.map((link) => (
-              <li className={styles.navItem} key={link.href}>
-                <a className={styles.navLink} href={link.href} onClick={onMenuClose}>
-                  {link.label}
-                </a>
-              </li>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = activeLink === link.href;
+
+              return (
+                <li className={styles.navItem} key={link.href}>
+                  <a
+                    className={`${styles.navLink} ${isActive ? styles.navLinkActive : ''}`}
+                    href={link.href}
+                    onClick={() => handleNavClick(link.href)}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
           <ul className={styles.headerSocialList}>
             {socialLinks.map((social) => (

@@ -1,23 +1,30 @@
 .ourYachts {
-  padding: 80px 0;
-  background: #11131f;
+  padding: 0;
+background: #0e1823;
 }
 
 .ourYachtsContainer {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 32px;
 }
 
 .sectionTitle {
-  color: #fbfbfb;
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  text-align: center;
-  margin: 0;
+  margin: 150px 0 75px 0;
+  font-family: var(--font-family);
+font-weight: 500;
+font-size: 48px;
+line-height: 100%;
+letter-spacing: -0.02em;
+text-align: center;
+color: #fbfbfb;
 }
 
 .list {
   display: grid;
   gap: 24px;
+  width: 100%;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -26,9 +33,15 @@
 .card {
   background: #fbfbfb;
   border-radius: 24px;
-  padding: 24px;
+  padding: 16px;
   display: grid;
   gap: 16px;
+  min-width: 0;
+}
+
+.card:global(.visually-hidden-tablet),
+.card:global(.visually-hidden-descktop) {
+  display: none;
 }
 
 .image {
@@ -43,6 +56,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 12px;
+  margin: 0 16px;
 }
 
 .cardName {
@@ -54,19 +68,23 @@
 .cardCategory {
   color: #1b414b;
   font-size: 0.95rem;
+  opacity: 0.4;
 }
 
 .divider {
   border: 0;
   border-top: 1px solid rgba(14, 59, 68, 0.2);
   margin: 0;
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
 .detailsBlock {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: flex;
+  justify-content: space-between;
   gap: 16px;
   font-size: 0.95rem;
+  margin: 0 16px;
 }
 
 .detailsList,
@@ -78,36 +96,66 @@
   gap: 8px;
 }
 
+.detailsValues {
+  margin-left: auto;
+  text-align: left;
+}
+
 .detail {
-  color: #1b414b;
-  font-weight: 600;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 118%;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #040306;
+  opacity: 0.4;
 }
 
 .detailValue {
-  color: #0e3b44;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 118%;
+  letter-spacing: 0.03em;
+  color: #040306;
 }
 
 .ctaButton {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
   padding: 14px 32px;
   border-radius: 15px;
   background: #1b414b;
   color: #fbfbfb;
   text-decoration: none;
   width: fit-content;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
   .list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .card:global(.visually-hidden-tablet) {
+    display: grid;
+  }
 }
 
 @media (min-width: 1280px) {
   .list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .card:global(.visually-hidden-descktop) {
+    display: grid;
+  }
+
+  .card {
+    padding: 14px;
+    gap: 14px;
   }
 }
