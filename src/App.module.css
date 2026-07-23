@@ -1,5 +1,8 @@
 :global(:root) {
   --font-family: "Inter", sans-serif;
+  --container-max-width: 1280px;
+  --container-inline-offset: 32px;
+  --block-border-radius: 24px;
 }
 
 :global(html) {
@@ -43,23 +46,11 @@
 }
 
 :global(.container) {
-  width: min(100% - 32px, 100%);
-  max-width: 375px;
+  width: min(calc(100% - var(--container-inline-offset)), var(--container-max-width));
+  min-width: 0;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0;
   box-sizing: border-box;
-}
-
-@media only screen and (min-width: 768px) {
-  :global(.container) {
-    max-width: 768px;
-  }
-}
-
-@media only screen and (min-width: 1280px) {
-  :global(.container) {
-    max-width: 1280px;
-  }
 }
 
 :global(.visually-hidden-tablet) {

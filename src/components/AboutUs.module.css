@@ -11,10 +11,8 @@
   gap: 48px;
   padding: 64px 32px 0;
   background: #fbfbfb;
-  border-radius: 24px;
+  border-radius: var(--block-border-radius);
   overflow: hidden;
-  width: min(100%, 1340px);
-  max-width: 1340px;
 }
 
 .aboutContent {
@@ -67,7 +65,7 @@
   display: block;
   width: calc(100% + 64px);
   margin: 0 -32px;
-  border-radius: 24px;
+  border-radius: var(--block-border-radius);
   overflow: hidden;
 }
 

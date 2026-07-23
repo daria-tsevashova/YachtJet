@@ -16,15 +16,11 @@
   transform: translate3d(0, -100%, 0);
 }
 
-.headerContainer {
-  width: 100%;
-}
-
 .navigation {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: min(100%, 1240px);
+  width: 100%;
   min-height: 48px;
   margin: 0 auto;
   padding: 4px 20px;
