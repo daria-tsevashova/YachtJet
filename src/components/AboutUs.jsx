@@ -16,7 +16,7 @@ function AboutUs() {
           </div>
         </div>
 
-        <picture>
+        <picture className={styles.aboutPicture}>
           <source srcSet="/img/about-us/img-desk1440.webp 1x, /img/about-us/img-desk1440@2x.webp 2x" media="(min-width: 1440px)" />
           <source srcSet="/img/about-us/img-desk.webp 1x, /img/about-us/img-desk@2x.webp 2x" media="(min-width: 1280px)" />
           <source srcSet="/img/about-us/img-tab.webp 1x, /img/about-us/img-tab@2x.webp 2x" media="(min-width: 768px)" />

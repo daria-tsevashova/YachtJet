@@ -2,37 +2,43 @@ import { useEffect, useState } from 'react';
 import styles from './Header.module.css';
 
 const socialLinks = [
-  { label: 'Instagram link', href: 'https://www.instagram.com/goitclub/', icon: 'icon-instagram' },
-  { label: 'Youtube link', href: 'https://www.youtube.com/c/GoIT', icon: 'icon-youtube' },
-  { label: 'Facebook link', href: 'https://www.facebook.com/goITclub/', icon: 'icon-facebook' },
+  { label: 'LinkedIn link', href: 'https://www.linkedin.com/in/daria-tsevashova/', icon: 'icon-linkedin' },
+  { label: 'GitHub link', href: 'https://github.com/daria-tsevashova', icon: 'icon-github' },
+  { label: 'Email us', href: 'mailto:dariatsevashova@gmail.com', icon: 'icon-mail' },
 ];
 
 function Header({ navLinks, onMenuToggle, onMenuClose, isMenuOpen }) {
   const [activeLink, setActiveLink] = useState(navLinks[0]?.href || '');
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   useEffect(() => {
     const sections = navLinks
       .map((link) => document.querySelector(link.href))
       .filter(Boolean);
+    const rentSection = document.querySelector('#rent-a-yacht');
 
     if (!sections.length) return undefined;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleEntry = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    const updateActiveLink = () => {
+      const headerOffset = 80;
+      const currentSection = [...sections]
+        .reverse()
+        .find((section) => section.getBoundingClientRect().top <= headerOffset) || sections[0];
 
-        if (visibleEntry) {
-          setActiveLink(`#${visibleEntry.target.id}`);
-        }
-      },
-      { threshold: [0.3, 0.6] }
-    );
+      setActiveLink(`#${currentSection.id}`);
+      setIsCollapsed(Boolean(rentSection && rentSection.getBoundingClientRect().top <= headerOffset));
+    };
 
-    sections.forEach((section) => observer.observe(section));
+    updateActiveLink();
+    window.addEventListener('scroll', updateActiveLink, { passive: true });
+    window.addEventListener('resize', updateActiveLink);
+    window.addEventListener('hashchange', updateActiveLink);
 
-    return () => observer.disconnect();
+    return () => {
+      window.removeEventListener('scroll', updateActiveLink);
+      window.removeEventListener('resize', updateActiveLink);
+      window.removeEventListener('hashchange', updateActiveLink);
+    };
   }, [navLinks]);
 
   const handleNavClick = (linkHref) => {
@@ -41,7 +47,7 @@ function Header({ navLinks, onMenuToggle, onMenuClose, isMenuOpen }) {
   };
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${isCollapsed ? styles.headerCollapsed : ''}`}>
       <div className={`container ${styles.headerContainer}`}>
         <nav className={styles.navigation}>
           <a className={styles.headerLogo} href="#hero" onClick={onMenuClose} aria-label="Site logo">

@@ -1,22 +1,32 @@
 .reviews {
-  padding: 80px 0;
-background: #0e1823;
+  padding: 80px 0 140px;
+  background: #0e1823;
 }
 
 .title {
   color: #fbfbfb;
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  text-align: center;
+    text-align: center;
   margin: 0 auto 16px;
-  max-width: 760px;
+  font-family: var(--font-family);
+font-weight: 500;
+font-size: 48px;
+line-height: 100%;
+letter-spacing: -0.02em;
+max-width: 860px;
 }
 
 .subtitle {
-  color: rgba(251, 251, 251, 0.8);
-  text-align: center;
   margin: 0 auto 36px;
   max-width: 700px;
   line-height: 1.6;
+  font-family: var(--font-family);
+font-weight: 400;
+font-size: 14px;
+line-height: 129%;
+letter-spacing: -0.02em;
+text-align: center;
+color: #fbfbfb;
+opacity: 0.4;
 }
 
 .list {
@@ -28,25 +38,27 @@ background: #0e1823;
 }
 
 .card {
-  background: rgba(251, 251, 251, 0.06);
+  background: #fbfbfb;
   border-radius: 24px;
   padding: 24px;
   display: grid;
   gap: 16px;
+  text-align: center;
 }
 
 .avatar {
+  justify-self: center;
   border-radius: 50%;
   object-fit: cover;
 }
 
 .name {
-  color: #fbfbfb;
+  color: #0e1823;
   margin: 0;
 }
 
 .text {
-  color: rgba(251, 251, 251, 0.8);
+  color: rgba(4, 3, 6, 0.55);
   margin: 0;
   line-height: 1.6;
 }

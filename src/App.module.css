@@ -1,10 +1,14 @@
+:global(:root) {
+  --font-family: "Inter", sans-serif;
+}
+
 :global(html) {
   scroll-behavior: smooth;
 }
 
 :global(body) {
   margin: 0;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-family);
   background-color: #0e1823;
   color: #fbfbfb;
   min-height: 100%;
@@ -13,6 +17,12 @@
 
 :global(*) {
   box-sizing: border-box;
+}
+
+:global(button),
+:global(input),
+:global(textarea) {
+  font-family: inherit;
 }
 
 :global(main) {

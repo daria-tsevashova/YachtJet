@@ -3,7 +3,7 @@ import styles from './Footer.module.css';
 function Footer() {
   return (
     <footer className={styles.footer}>
-      <div className="container">
+      <div className={`container ${styles.footerContainer}`}>
         <div className={styles.top}>
           <div className={styles.logoNav}>
             <a href="#hero" className={styles.logo}>
@@ -23,23 +23,23 @@ function Footer() {
           </div>
           <ul className={styles.socials}>
             <li className={styles.socialItem}>
-              <a href="https://www.instagram.com/goitclub/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className={styles.socialLink}>
+              <a href="https://www.linkedin.com/in/daria-tsevashova/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className={styles.socialLink}>
                 <svg className={styles.socialIcon} width="24" height="24">
-                  <use href="/img/sprite.svg#icon-instagram"></use>
+                  <use href="/img/sprite.svg#icon-linkedin"></use>
                 </svg>
               </a>
             </li>
             <li className={styles.socialItem}>
-              <a href="https://www.youtube.com/c/GoIT" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className={styles.socialLink}>
+              <a href="https://github.com/daria-tsevashova" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className={styles.socialLink}>
                 <svg className={styles.socialIcon} width="24" height="24">
-                  <use href="/img/sprite.svg#icon-youtube"></use>
+                  <use href="/img/sprite.svg#icon-github"></use>
                 </svg>
               </a>
             </li>
             <li className={styles.socialItem}>
-              <a href="https://www.facebook.com/goITclub/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className={styles.socialLink}>
+              <a href="mailto:dariatsevashova@gmail.com" aria-label="Email us" className={styles.socialLink}>
                 <svg className={styles.socialIcon} width="24" height="24">
-                  <use href="/img/sprite.svg#icon-facebook"></use>
+                  <use href="/img/sprite.svg#icon-mail"></use>
                 </svg>
               </a>
             </li>

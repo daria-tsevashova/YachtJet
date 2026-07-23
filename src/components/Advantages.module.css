@@ -8,38 +8,40 @@
   gap: 24px;
 }
 
-.statisticsCard,
+.textContainer,
 .imageContainer {
   border-radius: 24px;
   overflow: hidden;
 }
 
-.statisticsCard {
+.textContainer {
   background: #1b414b;
   padding: 32px 24px;
 }
 
 .list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 32px 20px;
+  grid-template-columns: 1fr;
+  gap: 24px;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .item {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 16px;
   min-width: 0;
+  align-items: stretch;
 }
 
 .number {
-  display: block;
   color: #fbfbfb;
   font-size: 32px;
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.03em;
-  margin-bottom: 16px;
 }
 
 .itemTitle {
@@ -51,10 +53,12 @@
 }
 
 .text {
+  border-left: 1px solid rgba(251, 251, 251, 0.3);
   color: rgba(251, 251, 251, 0.72);
   font-size: 13px;
   line-height: 1.5;
   margin: 0;
+  padding-left: 16px;
 }
 
 .imageContainer {
@@ -85,11 +89,12 @@
     gap: 28px;
   }
 
-  .statisticsCard {
+  .textContainer {
     padding: 40px 32px;
   }
 
   .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     height: 100%;
     gap: 40px 32px;
   }
@@ -108,7 +113,7 @@
     gap: 32px;
   }
 
-  .statisticsCard {
+  .textContainer {
     padding: 48px 50px;
   }
 
@@ -121,9 +126,3 @@
   }
 }
 
-@media (max-width: 479px) {
-  .list {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-}

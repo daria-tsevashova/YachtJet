@@ -122,17 +122,26 @@ color: #fbfbfb;
 }
 
 .ctaButton {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 14px 32px;
+  border: 1px solid #bdc8cb;
   border-radius: 15px;
-  background: #1b414b;
+padding: 18px 75px;
+width: 194px;
+height: 56px;
+  background: transparent;
   color: #fbfbfb;
-  text-decoration: none;
   width: fit-content;
-  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  text-decoration: none;
+
 }
+
+.ctaButton:hover,
+.ctaButton:focus {
+background: #fbfbfb;
+  color: #1b414b;
+}
+
 
 @media (min-width: 768px) {
   .list {

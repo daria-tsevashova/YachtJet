@@ -8,7 +8,7 @@
   background: linear-gradient(90deg, #11131f 0%, #1b414b 100%);
   transform: translateX(100%);
   transition: transform 0.3s ease;
-  z-index: 20;
+  z-index: 200;
 }
 
 .isOpen {
@@ -79,3 +79,4 @@
 .socialIcon {
   fill: currentColor;
 }
+
