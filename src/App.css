@@ -1,15 +1,15 @@
-:global(:root) {
+:root {
   --font-family: "Inter", sans-serif;
   --container-max-width: 1280px;
   --container-inline-offset: 32px;
   --block-border-radius: 24px;
 }
 
-:global(html) {
+html {
   scroll-behavior: smooth;
 }
 
-:global(body) {
+body {
   margin: 0;
   font-family: var(--font-family);
   background-color: #0e1823;
@@ -18,21 +18,21 @@
   overflow-x: hidden;
 }
 
-:global(*) {
+* {
   box-sizing: border-box;
 }
 
-:global(button),
-:global(input),
-:global(textarea) {
+button,
+input,
+textarea {
   font-family: inherit;
 }
 
-:global(main) {
+main {
   overflow-x: hidden;
 }
 
-:global(.visually-hidden) {
+.visually-hidden {
   position: absolute;
   white-space: nowrap;
   width: 1px;
@@ -45,7 +45,7 @@
   margin: -1px;
 }
 
-:global(.container) {
+.container {
   width: min(calc(100% - var(--container-inline-offset)), var(--container-max-width));
   min-width: 0;
   margin: 0 auto;
@@ -53,28 +53,28 @@
   box-sizing: border-box;
 }
 
-:global(.visually-hidden-tablet) {
+.visually-hidden-tablet {
   display: none;
 }
 
 @media (min-width: 768px) {
-  :global(.visually-hidden-tablet) {
+  .visually-hidden-tablet {
     display: flex;
   }
 }
 
-:global(.visually-hidden-descktop) {
+.visually-hidden-descktop {
   display: none;
 }
 
 @media (min-width: 1280px) {
-  :global(.visually-hidden-descktop) {
+  .visually-hidden-descktop {
     display: flex;
   }
 }
 
 @media (min-width: 768px) {
-  :global(.reviews-list li:nth-child(2).visually-hidden) {
+  .reviews-list li:nth-child(2).visually-hidden {
     position: static;
     width: auto;
     height: auto;
@@ -87,7 +87,7 @@
 }
 
 @media (min-width: 1280px) {
-  :global(.reviews-card.visually-hidden) {
+  .reviews-card.visually-hidden {
     position: static;
     width: auto;
     height: auto;
