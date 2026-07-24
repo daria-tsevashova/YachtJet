@@ -3,25 +3,24 @@
 }
 
 .footerContainer {
-  padding-top: 40px;
-  padding-bottom: 32px;
+  padding: 40px 8px 32px;
   background: #1b414b;
   border-radius: var(--block-border-radius) var(--block-border-radius) 0 0;
 }
 
 .top {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
+  gap: 24px;
 }
 
 .logoNav {
   display: flex;
+  width: 100%;
   align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px;
 }
 
 .logo {
@@ -67,11 +66,21 @@
 }
 
 .nav {
-  gap: 12px;
+  gap: 6px;
+}
+
+.navLink {
+  width: 60px;
+  height: 36px;
+  font-size: 0.75rem;
 }
 
 .socialLink {
   display: inline-flex;
+}
+
+.socials {
+  align-self: center;
 }
 
 .socialIcon {
@@ -80,11 +89,11 @@
 
 .slogan {
   max-width: 800px;
-  margin: 96px auto 92px;
+  margin: 80px auto;
   text-align: center;
-font-family: var(--font-family);
+  font-family: var(--font-family);
   font-weight: 300;
-  font-size: 32px;
+  font-size: 24px;
   line-height: 100%;
   letter-spacing: -0.02em;
   color: #fbfbfb;
@@ -106,6 +115,15 @@ font-family: var(--font-family);
 } 
 
 @media (min-width: 768px) {
+  .footerContainer {
+    padding: 48px 32px 32px;
+  }
+
+  .slogan {
+    margin: 96px auto 92px;
+    font-size: 32px;
+  }
+
   .top {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -118,6 +136,13 @@ font-family: var(--font-family);
 
   .nav {
     grid-column: 2;
+    gap: 12px;
+  }
+
+  .navLink {
+    width: 91px;
+    height: 40px;
+    font-size: 0.95rem;
   }
 
   .socials{
